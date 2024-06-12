@@ -1,9 +1,9 @@
-defmodule Cozystack.MixProject do
+defmodule App.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :cozystack,
+      app: :app,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -18,7 +18,7 @@ defmodule Cozystack.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Cozystack.Application, []},
+      mod: {App.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -75,10 +75,10 @@ defmodule Cozystack.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind cozystack", "esbuild cozystack"],
+      "assets.build": ["tailwind app", "esbuild app"],
       "assets.deploy": [
-        "tailwind cozystack --minify",
-        "esbuild cozystack --minify",
+        "tailwind app --minify",
+        "esbuild app --minify",
         "phx.digest"
       ]
     ]

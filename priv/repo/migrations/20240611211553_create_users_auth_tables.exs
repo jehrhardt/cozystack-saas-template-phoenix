@@ -1,4 +1,4 @@
-defmodule Cozystack.Repo.Migrations.CreateUsersAuthTables do
+defmodule App.Repo.Migrations.CreateUsersAuthTables do
   use Ecto.Migration
 
   def change do

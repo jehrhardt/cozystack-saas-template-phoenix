@@ -1,4 +1,4 @@
-# Cozystack
+# App
 
 To start your Phoenix server:
 
